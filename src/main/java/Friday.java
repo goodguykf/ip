@@ -19,9 +19,12 @@ public class Friday {
                 break;
             } else if(input.equals("list")) {
                 System.out.println("Here are the tasks in your list:");
-                for(int i = 1; i < pointer; i++) { //print out task recursively
+                for(int i = 1; i < 100; i++) { //print out task recursively
+                    if(list[i] == null) {
+                        continue;
+                    }
                     Task currTask = list[i];
-                    System.out.println(i + "." + currTask.getStatusIcon() + " " + currTask.getDescription());
+                    System.out.println(i + "." + currTask.printTask());
                 }
             } else if (input.startsWith("mark ")) {
                 //this marks the task as done when it is requested
@@ -40,10 +43,48 @@ public class Friday {
                 System.out.println(currTask.getStatusIcon() + " " + currTask.getDescription());
 
             } else {
-                Task t = new Task(input);
-                list[pointer] = t;
-                pointer++;
-                System.out.println("added: " + input); // to notify the user that task is added
+                if(input.startsWith("todo")) {
+                    String[] parts = input.split(" ", 2); // getting the description
+                    String description = parts[1];
+
+                    ToDos td = new ToDos(description);
+                    list[pointer] = td;
+                    System.out.println("Got it. I've added this task:"); // to notify the user that task is added
+                    System.out.println(td.printTask());
+                    System.out.println("Now you have " + pointer + " tasks in the list.");
+                    pointer++;
+                } else if (input.startsWith("deadline")) {
+                    String[] parts = input.split(" ", 2); // getting the description
+                    String impt = parts[1];
+
+                    String[] imptParts = impt.split(" /by ", 2);
+                    String description = imptParts[0];  //the description of the task
+                    String deadline = imptParts[1]; //the deadline of the task
+
+                    Deadlines dl = new Deadlines(description, deadline);
+                    list[pointer] = dl;
+                    System.out.println("Got it. I've added this task:"); // to notify the user that task is added
+                    System.out.println(dl.printTask());
+                    System.out.println("Now you have " + pointer + " tasks in the list.");
+                    pointer++;
+                } else if (input.startsWith("event")) {
+                    String[] parts = input.split(" ", 2); // getting the description
+                    String impt = parts[1];
+
+                    String[] imptParts = impt.split(" /from ", 2);
+                    String description = imptParts[0];  // event description
+
+                    String[] timeParts = imptParts[1].split(" /to ", 2);
+                    String from = timeParts[0];     // from
+                    String to = timeParts[1];       // to
+
+                    Events event = new Events(description, from, to);
+                    list[pointer] = event;
+                    System.out.println("Got it. I've added this task:"); // to notify the user that task is added
+                    System.out.println(event.printTask());
+                    System.out.println("Now you have " + pointer + " tasks in the list.");
+                    pointer++;
+                }
             }
         }
 

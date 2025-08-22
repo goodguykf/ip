@@ -14,4 +14,8 @@ public class Task {
     public String getStatusIcon() {
         return ( isDone ? "[X]" : "[ ]");
     }
+
+    public String printTask() {
+        return getStatusIcon() + getDescription();
+    }
 }
