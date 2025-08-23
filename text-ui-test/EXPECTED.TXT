@@ -39,3 +39,11 @@ Here are the tasks in your list:
 5.[T][ ] borrow book
 6.[D][ ] return book (by :Sunday)
 7.[E][ ] project meeting (from: Mon 2pm to: 4pm)
+Description of a Todo Task cannot be empty!
+Description of a Deadline Task cannot be empty!
+Description of a Event Task cannot be empty!
+Description of a Todo Task cannot be empty!
+Deadline of a Deadline Task cannot be empty!
+Start time of a Event Task cannot be empty!
+End time of a Event Task cannot be empty!
+Start time of a Event Task cannot be empty!

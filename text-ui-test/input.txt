@@ -9,3 +9,11 @@ list
 deadline return book /by Sunday
 event project meeting /from Mon 2pm /to 4pm
 list
+todo
+deadline
+event
+todo
+deadline buy lunch
+event lecture
+event lecture /from 2pm
+event lecture /to 2pm
