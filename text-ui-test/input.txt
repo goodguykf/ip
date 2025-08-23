@@ -3,9 +3,16 @@ deadline return book /by June 6th
 event project meeting /from Aug 6th 2pm /to 4pm
 todo join sports club
 todo borrow book
+list
 mark 1
 mark 4
 list
+mark 3
+list
+unmark 3
+list
+unmark abc
+unmark 123
 deadline return book /by Sunday
 event project meeting /from Mon 2pm /to 4pm
 list
@@ -17,3 +24,8 @@ deadline buy lunch
 event lecture
 event lecture /from 2pm
 event lecture /to 2pm
+delete abc
+delete 123
+delete 1
+list
+bye

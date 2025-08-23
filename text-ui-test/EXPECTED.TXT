@@ -15,6 +15,12 @@ Now you have 4 tasks in the list.
 Got it. I've added this task:
 [T][ ] borrow book
 Now you have 5 tasks in the list.
+Here are the tasks in your list:
+1.[T][ ] read book
+2.[D][ ] return book (by :June 6th)
+3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+4.[T][ ] join sports club
+5.[T][ ] borrow book
 Nice! I've marked this task as done:
 [X] read book
 Nice! I've marked this task as done:
@@ -25,6 +31,24 @@ Here are the tasks in your list:
 3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
 4.[T][X] join sports club
 5.[T][ ] borrow book
+Nice! I've marked this task as done:
+[X] project meeting
+Here are the tasks in your list:
+1.[T][X] read book
+2.[D][ ] return book (by :June 6th)
+3.[E][X] project meeting (from: Aug 6th 2pm to: 4pm)
+4.[T][X] join sports club
+5.[T][ ] borrow book
+Nice! I've unmarked this task as done:
+[ ] project meeting
+Here are the tasks in your list:
+1.[T][X] read book
+2.[D][ ] return book (by :June 6th)
+3.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+4.[T][X] join sports club
+5.[T][ ] borrow book
+You must specify the task number to delete.
+Sorry, this task does not exist. Try the command "list" and mark an existing task on your list.
 Got it. I've added this task:
 [D][ ] return book (by :Sunday)
 Now you have 6 tasks in the list.
@@ -47,3 +71,16 @@ Deadline of a Deadline Task cannot be empty!
 Start time of a Event Task cannot be empty!
 End time of a Event Task cannot be empty!
 Start time of a Event Task cannot be empty!
+You must specify the task number to delete.
+Sorry, this task does not exist. Try the command "list" and delete an existing task on your list.
+Noted. I've removed this task:
+[T][X] read book
+Now you have 6 tasks in the list.
+Here are the tasks in your list:
+1.[D][ ] return book (by :June 6th)
+2.[E][ ] project meeting (from: Aug 6th 2pm to: 4pm)
+3.[T][X] join sports club
+4.[T][ ] borrow book
+5.[D][ ] return book (by :Sunday)
+6.[E][ ] project meeting (from: Mon 2pm to: 4pm)
+Bye. Hope to see you again soon!
