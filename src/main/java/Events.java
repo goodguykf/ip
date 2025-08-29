@@ -1,16 +1,27 @@
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
+
+
+
 /**
  * Represents a task with a specific starting and ending time. A <code>Events</code>
  * object corresponds to an event represented by two timing, the start and the end
  * timing by two Strings.
  */
 public class Events extends Task {
-    protected String from;
-    protected String to;
+    protected LocalDateTime from;
+    protected LocalDateTime to;
+
+    private static final DateTimeFormatter inputFormats =
+                DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+
+    private static final DateTimeFormatter outputFormatter =
+                DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm");
 
     public Events(String description, String from, String to) {
         super(description);
-        this.from = from;
-        this.to = to;
+        this.from = LocalDateTime.parse(from, inputFormats);
+        this.to = LocalDateTime.parse(to, outputFormatter);
     }
 
     /**
@@ -19,7 +30,7 @@ public class Events extends Task {
      * @return Start time of the event.
      */
     public String getFrom() {
-        return from;
+        return from.format(outputFormatter);
     }
 
     /**
@@ -29,13 +40,13 @@ public class Events extends Task {
      * @return End time of the event.
      */
     public String getTo() {
-        return to;
+        return to.format(outputFormatter);
     }
 
     @Override
     public String printTask() {
         return "[E]" + getStatusIcon() + " " + getDescription()
-                + " (from: " + from + " to: " + to + ")";
+                + " (from: " + getFrom() + " to: " + getTo() + ")";
     }
 
 }
