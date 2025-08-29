@@ -1,5 +1,9 @@
-public class NullTaskFridayException extends Exception {
-    public NullTaskFridayException(String message) {
+/**
+ * Represents a potential exceptions cause by Friday chatbot due to the user
+ * trying to add or retrieve a something that does not exist.
+ */
+public class NullFridayException extends Exception {
+    public NullFridayException(String message) {
         super(message);
     }
 }

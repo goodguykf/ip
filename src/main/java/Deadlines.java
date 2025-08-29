@@ -1,3 +1,8 @@
+/**
+ * This represents a task with a specific deadline. A <code>Deadline</code>
+ * object corresponds to a deadline with specified deadline represented by
+ * a string.
+ */
 public class Deadlines extends Task {
     protected String deadline;
 
@@ -6,6 +11,11 @@ public class Deadlines extends Task {
         this.deadline = deadline;
     }
 
+    /**
+     * Returns the deadline of the deadline task.
+     *
+     * @return deadline of the task,
+     */
     public String getDeadline() {
         return deadline;
     }
