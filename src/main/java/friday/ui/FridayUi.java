@@ -1,4 +1,7 @@
-import java.io.FileNotFoundException;
+package friday.ui;
+
+import friday.tasklist.FridayTaskList;
+import friday.tasks.Task;
 
 /**
  * Represents the UI of friday
@@ -9,7 +12,7 @@ public class FridayUi {
     public FridayUi() { }
 
     public void showWelcome() {
-        System.out.println("Hello! I'm Friday"); //Message sent when the bot is activated
+        System.out.println("Hello! I'm friday.ui.Friday"); //Message sent when the bot is activated
         System.out.println("What can I do for you?");
     }
 
@@ -25,12 +28,12 @@ public class FridayUi {
     public void showTaskHasBeenDeleted(Task task, FridayTaskList tasklist) {
         System.out.println("Noted. I've removed this task:");
         System.out.println(task.printTask());
-        System.out.println("Now you have " + tasklist.numberOfTasks + " tasks in the list.");
+        System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
     }
     public void showTaskHasBeenAdded(Task task, FridayTaskList tasklist) {
         System.out.println("Got it. I've added this task:"); // to notify the user that task is added
         System.out.println(task.printTask());
-        System.out.println("Now you have " + tasklist.numberOfTasks + " tasks in the list.");
+        System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
     }
 
     public void showListHasBeenMarked(Task task) {

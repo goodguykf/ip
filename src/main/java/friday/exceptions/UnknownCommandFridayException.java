@@ -1,4 +1,4 @@
-package friday;
+package friday.exceptions;
 
 /**
  * Represents an unchecked exception where the user is inputting an unknown command

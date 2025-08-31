@@ -1,7 +1,8 @@
-package friday;
+package friday.commands;
 
-import friday.commands.FridayCommand;
+import friday.exceptions.UnknownCommandFridayException;
 import friday.storage.FridayStorage;
+import friday.tasklist.FridayTaskList;
 import friday.ui.FridayUi;
 
 public class FridayTodoCommand extends FridayCommand {
@@ -13,7 +14,7 @@ public class FridayTodoCommand extends FridayCommand {
 
     public String process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Description of a Todo friday.Task cannot be empty!");
+            throw new UnknownCommandFridayException("Description of a Todo friday.tasks.Task cannot be empty!");
         }
         return arg;
     }
@@ -24,6 +25,6 @@ public class FridayTodoCommand extends FridayCommand {
 
         taskList.addTodoTask(processArgument);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showTaskHasBeenAdded(taskList.getTask(taskList.numberOfTasks),taskList);
+        ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
     }
 }

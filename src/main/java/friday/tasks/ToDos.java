@@ -1,4 +1,7 @@
-package friday;
+package friday.tasks;
+
+import friday.tasks.Task;
+
 
 /**
  * Represents a task that needs to be done. A <code>Todos</code> object corresponds
@@ -16,10 +19,10 @@ public class ToDos extends Task {
     }
 
     public void markTaskAsDone() {
-        isDone = true;
+        done = true;
     }
 
     public void markTaskAsUndone() {
-        isDone = false;
+        done = false;
     }
 }

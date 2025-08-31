@@ -1,5 +1,8 @@
-package friday;
+package friday.storage;
 
+import friday.exceptions.FridayTaskDecodeException;
+import friday.tasks.Task;
+import friday.tasks.ToDos;
 import friday.tasks.Deadlines;
 import friday.tasks.Events;
 

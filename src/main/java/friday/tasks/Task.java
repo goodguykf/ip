@@ -1,18 +1,18 @@
-package friday;
+package friday.tasks;
 
 /**
- * Represents a possible task that can be done by the user. A <code>friday.Task</code>
+ * Represents a possible task that can be done by the user. A <code>friday.tasks.Task</code>
  * object corresponds to a task represented by a String and the state of
  * the object, represented by a boolean, with true meaning it has been completed and false meaning it has
  * yet to be completed.
  */
 public class Task {
     protected String description;
-    protected boolean isDone;
+    protected boolean done;
 
     public Task (String description) {
         this.description = description;
-        this.isDone = false;
+        this.done = false;
     }
 
     /**
@@ -31,7 +31,7 @@ public class Task {
      * @return the String representation of the status of the object
      */
     public String getStatusIcon() {
-        return ( isDone ? "[X]" : "[ ]");
+        return ( done ? "[X]" : "[ ]");
     }
 
     /**
@@ -41,5 +41,17 @@ public class Task {
      */
     public String printTask() {
         return getStatusIcon() + getDescription();
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void markTaskAsDone() {
+        done = true;
+    }
+
+    public void markTaskAsUndone() {
+        done = false;
     }
 }

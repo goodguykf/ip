@@ -1,4 +1,4 @@
-package friday;
+package friday.tasks;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
@@ -37,11 +37,11 @@ public class Deadlines extends Task {
     }
 
     public void markTaskAsDone() {
-        isDone = true;
+        done = true;
     }
 
     public void markTaskAsUndone() {
-        isDone = false;
+        done = false;
     }
 
 }

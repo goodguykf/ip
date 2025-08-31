@@ -1,8 +1,8 @@
-package friday.ui;
+package friday.parser;
 
-import friday.FridayTodoCommand;
-import friday.FridayUnknownCommand;
-import friday.FridayUnmarkAsDoneCommand;
+import friday.commands.FridayTodoCommand;
+import friday.commands.FridayUnknownCommand;
+import friday.commands.FridayUnmarkAsDoneCommand;
 import friday.commands.*;
 
 /**

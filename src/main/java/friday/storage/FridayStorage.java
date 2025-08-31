@@ -1,4 +1,7 @@
-package friday;
+package friday.storage;
+
+import friday.exceptions.FridayTaskDecodeException;
+import friday.tasks.Task;
 
 import java.io.*;
 import java.util.ArrayList;

@@ -1,5 +1,9 @@
-package friday;
+package friday.commands;
 
+import friday.storage.FridayStorage;
+import friday.tasklist.FridayTaskList;
+import friday.tasks.Task;
+import friday.exceptions.UnknownCommandFridayException;
 import friday.ui.FridayUi;
 
 public class FridayDeleteTaskCommand extends FridayCommand {

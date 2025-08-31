@@ -1,6 +1,8 @@
-package friday;
+package friday.commands;
 
-import friday.commands.FridayCommand;
+import friday.tasklist.FridayTaskList;
+import friday.exceptions.UnknownCommandFridayException;
+import friday.storage.FridayStorage;
 import friday.ui.FridayUi;
 
 /**

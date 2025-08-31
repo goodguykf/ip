@@ -1,4 +1,4 @@
-package friday;
+package friday.tasks;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 
 /**
- * Represents a task with a specific starting and ending time. A <code>friday.Events</code>
+ * Represents a task with a specific starting and ending time. A <code>friday.tasks.Events</code>
  * object corresponds to an event represented by two timing, the start and the end
  * timing by two Strings.
  */
@@ -52,11 +52,11 @@ public class Events extends Task {
     }
 
     public void markTaskAsDone() {
-        isDone = true;
+        done = true;
     }
 
     public void markTaskAsUndone() {
-        isDone = false;
+        done = false;
     }
 
 }

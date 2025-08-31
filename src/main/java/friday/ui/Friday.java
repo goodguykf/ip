@@ -1,12 +1,17 @@
-package friday;
+package friday.ui;
 
-import friday.ui.FridayUi;
+import friday.commands.FridayCommand;
+import friday.exceptions.FridayTaskDecodeException;
+import friday.exceptions.UnknownCommandFridayException;
+import friday.parser.FridayParser;
+import friday.storage.FridayStorage;
+import friday.tasklist.FridayTaskList;
 
 import java.util.Scanner;
 
 
 /**
- * Represents a automated chatbot
+ * Represents an automated chatbot
  */
 
 public class Friday {

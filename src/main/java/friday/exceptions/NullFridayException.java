@@ -1,4 +1,4 @@
-package friday;
+package friday.exceptions;
 
 /**
  * Represents a potential exceptions cause by friday.ui.Friday chatbot due to the user

@@ -1,5 +1,7 @@
-package friday;
+package friday.tasklist;
 
+import friday.tasks.Task;
+import friday.tasks.ToDos;
 import friday.tasks.Deadlines;
 import friday.tasks.Events;
 
@@ -18,12 +20,12 @@ public class FridayTaskList {
 
     public void markTaskAsDone(int taskNo) {
         Task currTask = list.get(taskNo - 1);
-        currTask.isDone = true;
+        currTask.markTaskAsDone();
     }
 
     public void markTaskAsUndone(int taskNo) {
         Task currTask = list.get(taskNo - 1);
-        currTask.isDone = false;
+        currTask.markTaskAsUndone();
     }
 
     public void deleteTask(int taskNo) {
