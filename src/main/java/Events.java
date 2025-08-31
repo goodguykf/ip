@@ -21,7 +21,7 @@ public class Events extends Task {
     public Events(String description, String from, String to) {
         super(description);
         this.from = LocalDateTime.parse(from, inputFormats);
-        this.to = LocalDateTime.parse(to, outputFormatter);
+        this.to = LocalDateTime.parse(to, inputFormats);
     }
 
     /**
@@ -47,6 +47,14 @@ public class Events extends Task {
     public String printTask() {
         return "[E]" + getStatusIcon() + " " + getDescription()
                 + " (from: " + getFrom() + " to: " + getTo() + ")";
+    }
+
+    public void markTaskAsDone() {
+        isDone = true;
+    }
+
+    public void markTaskAsUndone() {
+        isDone = false;
     }
 
 }

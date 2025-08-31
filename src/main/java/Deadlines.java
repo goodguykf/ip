@@ -26,12 +26,20 @@ public class Deadlines extends Task {
      * @return deadline of the task,
      */
     public String getDeadline() {
-        return deadline.format(outputFormatter);
+        return deadline.format(inputFormats);
     }
 
     @Override
     public String printTask() {
         return "[D]" + getStatusIcon() + " " + getDescription() + " (by :" + getDeadline() +")";
+    }
+
+    public void markTaskAsDone() {
+        isDone = true;
+    }
+
+    public void markTaskAsUndone() {
+        isDone = false;
     }
 
 }

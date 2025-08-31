@@ -18,8 +18,7 @@ public class FridayFileWriter {
         FileWriter fw = new FileWriter(filePath);
         for (int i = 0; i < list.size(); i++) { //print out task recursively
             Task currTask = list.get(i);
-            int tempCounter = i;
-            tempCounter++;
+            int tempCounter = i + 1; // Start from 1 instead of 0
             fw.write(tempCounter + "." + currTask.printTask() + System.lineSeparator());
         }
         fw.close();

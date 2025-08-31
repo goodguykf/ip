@@ -1,0 +1,46 @@
+import java.io.FileNotFoundException;
+
+/**
+ * Represents the UI of friday
+ */
+
+public class FridayUi {
+
+    public FridayUi() { }
+
+    public void showWelcome() {
+        System.out.println("Hello! I'm Friday"); //Message sent when the bot is activated
+        System.out.println("What can I do for you?");
+    }
+
+    public void showGoodbye() {
+        System.out.println("Bye. Hope to see you again soon!");
+    }
+
+    public void showList(FridayTaskList taskList) {
+        System.out.println("Here are the tasks in your list:");
+        taskList.printList();
+    }
+
+    public void showTaskHasBeenDeleted(Task task, FridayTaskList tasklist) {
+        System.out.println("Noted. I've removed this task:");
+        System.out.println(task.printTask());
+        System.out.println("Now you have " + tasklist.numberOfTasks + " tasks in the list.");
+    }
+    public void showTaskHasBeenAdded(Task task, FridayTaskList tasklist) {
+        System.out.println("Got it. I've added this task:"); // to notify the user that task is added
+        System.out.println(task.printTask());
+        System.out.println("Now you have " + tasklist.numberOfTasks + " tasks in the list.");
+    }
+
+    public void showListHasBeenMarked(Task task) {
+        System.out.println("Nice! I've marked this task as done:");
+        System.out.println(task.getStatusIcon() + " " + task.getDescription());
+    }
+
+    public void showListHasBeenUnmarked(Task task) {
+        System.out.println("Nice! I've unmarked this task as done:");
+        System.out.println(task.getStatusIcon() + " " + task.getDescription());
+    }
+
+}
