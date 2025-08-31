@@ -1,5 +1,7 @@
+package friday;
+
 /**
- * Represents a possible task that can be done by the user. A <code>Task</code>
+ * Represents a possible task that can be done by the user. A <code>friday.Task</code>
  * object corresponds to a task represented by a String and the state of
  * the object, represented by a boolean, with true meaning it has been completed and false meaning it has
  * yet to be completed.

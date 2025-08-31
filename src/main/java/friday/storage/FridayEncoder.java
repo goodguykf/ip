@@ -1,3 +1,8 @@
+package friday;
+
+import friday.tasks.Deadlines;
+import friday.tasks.Events;
+
 import java.util.ArrayList;
 import java.util.List;
 

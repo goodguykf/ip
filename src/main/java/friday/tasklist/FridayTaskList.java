@@ -1,3 +1,8 @@
+package friday;
+
+import friday.tasks.Deadlines;
+import friday.tasks.Events;
+
 import java.util.ArrayList;
 
 public class FridayTaskList {
@@ -45,6 +50,9 @@ public class FridayTaskList {
         numberOfTasks++;
     }
 
+    public int getNumberOfTasks() {
+        return numberOfTasks;
+    }
     public ArrayList<Task> getList() {
         return list;
     }

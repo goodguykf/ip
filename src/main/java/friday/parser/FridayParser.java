@@ -1,4 +1,9 @@
-import java.util.Scanner;
+package friday.ui;
+
+import friday.FridayTodoCommand;
+import friday.FridayUnknownCommand;
+import friday.FridayUnmarkAsDoneCommand;
+import friday.commands.*;
 
 /**
  *

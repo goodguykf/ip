@@ -1,4 +1,8 @@
-public class FridayDeadlineCommand extends FridayCommand{
+package friday;
+
+import friday.ui.FridayUi;
+
+public class FridayDeadlineCommand extends FridayCommand {
     public String argument;
 
     public FridayDeadlineCommand (String argument) {
@@ -7,7 +11,7 @@ public class FridayDeadlineCommand extends FridayCommand{
 
     public String process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Description of a Deadline Task cannot be empty!");
+            throw new UnknownCommandFridayException("Description of a Deadline friday.Task cannot be empty!");
         }
         return arg;
     }
@@ -21,7 +25,7 @@ public class FridayDeadlineCommand extends FridayCommand{
 
         //catch if there is no deadline entered
         if (parts.length < 2 || parts[1].trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Deadline of a Deadline Task cannot be empty!");
+            throw new UnknownCommandFridayException("Deadline of a Deadline friday.Task cannot be empty!");
         }
 
         String description = parts[0];  //the description of the task
@@ -29,6 +33,6 @@ public class FridayDeadlineCommand extends FridayCommand{
 
         taskList.addDeadlineTask(description, deadline);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showTaskHasBeenAdded(taskList.getTask(taskList.numberOfTasks), taskList);
+        ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()), taskList);
     }
 }

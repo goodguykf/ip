@@ -1,7 +1,12 @@
+package friday;
+
+import friday.commands.FridayCommand;
+import friday.ui.FridayUi;
+
 /**
  * Represents the command to show the list of tasks
  */
-public class FridayGetListCommand extends FridayCommand{
+public class FridayGetListCommand extends FridayCommand {
     /**
      * This prints out the list of tasks that the user have.
      * @param ui the ui that friday is using

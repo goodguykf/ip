@@ -1,3 +1,7 @@
+package friday;
+
+import friday.ui.FridayUi;
+
 /**
  * Represents the commands to be executed
  */

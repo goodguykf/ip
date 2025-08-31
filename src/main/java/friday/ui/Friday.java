@@ -1,6 +1,7 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
+package friday;
+
+import friday.ui.FridayUi;
+
 import java.util.Scanner;
 
 

@@ -1,3 +1,9 @@
+package friday;
+
+import friday.commands.FridayCommand;
+import friday.ui.Friday;
+import friday.ui.FridayUi;
+
 public class FridayExitCommand extends FridayCommand {
     public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {

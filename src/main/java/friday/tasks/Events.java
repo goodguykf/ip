@@ -1,10 +1,12 @@
+package friday;
+
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 
 
 /**
- * Represents a task with a specific starting and ending time. A <code>Events</code>
+ * Represents a task with a specific starting and ending time. A <code>friday.Events</code>
  * object corresponds to an event represented by two timing, the start and the end
  * timing by two Strings.
  */

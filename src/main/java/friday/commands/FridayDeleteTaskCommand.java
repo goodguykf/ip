@@ -1,3 +1,7 @@
+package friday;
+
+import friday.ui.FridayUi;
+
 public class FridayDeleteTaskCommand extends FridayCommand {
     public String argument;
 
@@ -16,7 +20,7 @@ public class FridayDeleteTaskCommand extends FridayCommand {
     public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         int taskNo = process(this.argument);
-        if(taskNo > taskList.numberOfTasks + 1) {
+        if(taskNo > taskList.getNumberOfTasks() + 1) {
             throw new UnknownCommandFridayException(
                     "Sorry, this task does not exist. Try the command \"list\" and delete an existing task on your list.");
         }
