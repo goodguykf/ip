@@ -21,7 +21,7 @@ public class Friday {
     public static boolean isRunning = true;
 
     public static void stopRunning() {
-        Friday.isRunning = false;
+        isRunning = false;
     }
 
     public Friday (String filePath) {
@@ -39,7 +39,6 @@ public class Friday {
         ui.showWelcome();
 
         Scanner sc = new Scanner(System.in);
-        boolean isRunning = true;
 
         while(isRunning) {
             try {

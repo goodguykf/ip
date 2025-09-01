@@ -30,12 +30,11 @@ test {
 }
 
 application {
-    mainClass.set("seedu.duke.Duke")
+    mainClass.set("friday.ui.Friday")
 }
 
 shadowJar {
-    archiveBaseName.set("duke")
-    archiveClassifier.set("") // no classifier
+    archiveFileName.set("friday.jar")
 }
 
 checkstyle {
