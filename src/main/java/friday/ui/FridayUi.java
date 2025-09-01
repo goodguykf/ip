@@ -3,6 +3,8 @@ package friday.ui;
 import friday.tasklist.FridayTaskList;
 import friday.tasks.Task;
 
+import java.util.ArrayList;
+
 /**
  * Represents the UI of friday
  */
@@ -47,6 +49,13 @@ public class FridayUi {
     public void showListHasBeenUnmarked(Task task) {
         System.out.println("Nice! I've unmarked this task as done:");
         System.out.println(task.getStatusIcon() + " " + task.getDescription());
+    }
+
+    public void showMatchingResults(ArrayList<String> matchingResults) {
+        System.out.println("Here are the matching tasks in your list:");
+        for (String task : matchingResults) {
+            System.out.println(task);
+        }
     }
 
 }
