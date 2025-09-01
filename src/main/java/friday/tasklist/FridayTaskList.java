@@ -5,6 +5,7 @@ import friday.tasks.ToDos;
 import friday.tasks.Deadlines;
 import friday.tasks.Events;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class FridayTaskList {
@@ -78,6 +79,23 @@ public class FridayTaskList {
 
     public Task getTask(int taskNo) {
         return list.get(taskNo - 1);
+    }
+
+    /**
+     * Finds the task in the list that have matching keyword in the description.
+     * @param keyword is the keyword the user want to use to search.
+     * @return the ArrayList of String with the tasks that have the keyword.
+     */
+    public ArrayList<String> findTasks(String keyword) {
+        ArrayList<String> results = new ArrayList<>();
+        int index = 1;
+        for (Task t : list) {
+            if (t.getDescription().contains(keyword) && !keyword.isEmpty()) {
+                results.add(index + "." + t.taskAsString());
+                index++;
+            }
+        }
+        return results;
     }
 
 
