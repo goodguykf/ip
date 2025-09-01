@@ -29,6 +29,7 @@ public class FridayParser {
             case "delete" -> new FridayDeleteTaskCommand(args);
             case "mark" -> new FridayMarkAsDoneCommand(args);
             case "unmark" -> new FridayUnmarkAsDoneCommand(args);
+            case "find" -> new FridayFindCommand(args);
             case "bye" -> new FridayExitCommand();
             default -> new FridayUnknownCommand();
         };

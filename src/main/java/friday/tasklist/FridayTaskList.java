@@ -90,7 +90,7 @@ public class FridayTaskList {
         ArrayList<String> results = new ArrayList<>();
         int index = 1;
         for (Task t : list) {
-            if (t.getDescription().contains(keyword)) {
+            if (t.getDescription().contains(keyword) && !keyword.isEmpty()) {
                 results.add(index + "." + t.taskAsString());
                 index++;
             }
