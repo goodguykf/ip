@@ -11,6 +11,9 @@ public class FridayUi {
 
     public FridayUi() { }
 
+    /**
+     * Shows the user the welcome message
+     */
     public void showWelcome() {
         System.out.println("Hello! I'm friday.ui.Friday"); //Message sent when the bot is activated
         System.out.println("What can I do for you?");

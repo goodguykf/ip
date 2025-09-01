@@ -31,17 +31,13 @@ public class Deadlines extends Task {
         return deadline.format(inputFormats);
     }
 
+    /**
+     * Formats the task into a String ready to print.
+     * @return a String of task in the correct format.
+     */
     @Override
     public String printTask() {
         return "[D]" + getStatusIcon() + " " + getDescription() + " (by :" + getDeadline() +")";
-    }
-
-    public void markTaskAsDone() {
-        done = true;
-    }
-
-    public void markTaskAsUndone() {
-        done = false;
     }
 
 }

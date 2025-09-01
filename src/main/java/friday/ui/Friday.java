@@ -35,6 +35,9 @@ public class Friday {
         }
     }
 
+    /**
+     * Runs the Friday bot
+     */
     public void run() {
         ui.showWelcome();
 

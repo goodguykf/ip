@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FridayEncoder {
+    /**
+     * Encodes the tasklist into a file
+     * @param tasks is a List of Tasks
+     * @return returns a list of string
+     */
     public static List<String> encodeTasks(List<Task> tasks) {
         List<String> encoded = new ArrayList<>();
         for (Task t : tasks) {

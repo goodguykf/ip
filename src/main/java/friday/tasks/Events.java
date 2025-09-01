@@ -45,18 +45,14 @@ public class Events extends Task {
         return to.format(outputFormatter);
     }
 
+    /**
+     * Formats the task into a String ready to print.
+     * @return a String of task in the correct format.
+     */
     @Override
     public String printTask() {
         return "[E]" + getStatusIcon() + " " + getDescription()
                 + " (from: " + getFrom() + " to: " + getTo() + ")";
-    }
-
-    public void markTaskAsDone() {
-        done = true;
-    }
-
-    public void markTaskAsUndone() {
-        done = false;
     }
 
 }

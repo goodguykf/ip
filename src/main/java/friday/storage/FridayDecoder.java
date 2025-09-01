@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FridayDecoder {
+    /**
+     * Decodes the list that is stored in a file
+     * @param encodedTasks is the List of String of the stored tasklist
+     * @return an ArrayList of tasks
+     * @throws FridayTaskDecodeException if the Task does not correspond to known tasks
+     */
     public static List<Task> decodeTasks(List<String> encodedTasks) throws FridayTaskDecodeException {
         List<Task> tasks = new ArrayList<>();
         for (String line : encodedTasks) {

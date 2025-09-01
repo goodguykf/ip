@@ -7,9 +7,16 @@ import friday.ui.Friday;
 import friday.ui.FridayUi;
 
 public class FridayExitCommand extends FridayCommand {
+    /**
+     * Executes the Exit command for the bot
+     * @param taskList is the current tasklist the bot is using.
+     * @param ui is the current ui the bot is using.
+     * @param storage is the current storage the bot is using.
+     * @throws UnknownCommandFridayException If the command is not one of the known command.
+     */
     public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
-        System.out.println("Bye. Hope to see you again soon!"); //notify user that bot is turning off
+        ui.showGoodbye();
         Friday.stopRunning();
     }
 }

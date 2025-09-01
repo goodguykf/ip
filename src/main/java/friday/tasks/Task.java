@@ -43,14 +43,24 @@ public class Task {
         return getStatusIcon() + getDescription();
     }
 
+    /**
+     * Check if the task has been marked as done.
+     * @return a boolean indicating if the task is done.
+     */
     public boolean isDone() {
         return done;
     }
 
+    /**
+     * Marks the task as done.
+     */
     public void markTaskAsDone() {
         done = true;
     }
 
+    /**
+     * Marks the task as undone.
+     */
     public void markTaskAsUndone() {
         done = false;
     }

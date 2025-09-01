@@ -15,6 +15,12 @@ public class FridayMarkAsDoneCommand extends FridayCommand {
         this.argument = argument;
     }
 
+    /**
+     * Processes the argument String to check if it is valid.
+     * @param arg is the command after the keyword.
+     * @return a processed command.
+     * @throws UnknownCommandFridayException if the argument does not fit the command description.
+     */
     public int process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty() || arg.trim().matches(".*\\D.*")) {
             throw new UnknownCommandFridayException("You must specify the task number to mark.");

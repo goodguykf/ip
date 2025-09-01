@@ -10,7 +10,12 @@ import friday.commands.*;
  */
 
 public class FridayParser {
-
+    /**
+     * Parses the String of command the user input and return a
+     * FridayCommand object according the the user input.
+     * @param fullCommand is the command input from user.
+     * @return FridayCommand
+     */
     public static FridayCommand parse(String fullCommand) {
         String[] parts = fullCommand.trim().split(" ", 2);
         String commandWord = parts[0];

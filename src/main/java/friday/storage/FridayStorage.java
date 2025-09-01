@@ -14,6 +14,11 @@ public class FridayStorage {
         filePath = fileAddress;
     }
 
+    /**
+     * Updates the storage file whenever an alteration to the list.
+     * has happened.
+     * @param list is the ArrayList of tasks.
+     */
     public static void writeListToFile(ArrayList<Task> list) {
         List<String> encoded = FridayEncoder.encodeTasks(list);
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
@@ -26,6 +31,11 @@ public class FridayStorage {
         }
     }
 
+    /**
+     * Decodes the file and returns an Array List.
+     * @return an ArrayList of tasks.
+     * @throws FridayTaskDecodeException if the file does not exist.
+     */
     public static ArrayList<Task> readFileToList() throws FridayTaskDecodeException {
         ArrayList<Task> tasks = new ArrayList<>();
         File file = new File(filePath);

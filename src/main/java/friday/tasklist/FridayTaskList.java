@@ -18,11 +18,21 @@ public class FridayTaskList {
 
     public FridayTaskList(){}
 
+    /**
+     * Marks the task corresponding to the int position, given as argument,
+     * on the list as done.
+     * @param taskNo is the task number on the list to be marked.
+     */
     public void markTaskAsDone(int taskNo) {
         Task currTask = list.get(taskNo - 1);
         currTask.markTaskAsDone();
     }
 
+    /**
+     * Unmarks the task corresponding to the int position, given as argument,
+     * on the list as done.
+     * @param taskNo is the task number on the list to be unmarked.
+     */
     public void markTaskAsUndone(int taskNo) {
         Task currTask = list.get(taskNo - 1);
         currTask.markTaskAsUndone();

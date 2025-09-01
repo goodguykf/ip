@@ -10,9 +10,11 @@ import friday.ui.FridayUi;
  */
 public class FridayGetListCommand extends FridayCommand {
     /**
-     * This prints out the list of tasks that the user have.
-     * @param ui the ui that friday is using
-     * @param storage the storage that the ui is using
+     * Executes the command to get the list of task.
+     * @param taskList is the current tasklist of the bot.
+     * @param ui is the current ui the bot is using.
+     * @param storage is the current storage that the bot is using.
+     * @throws UnknownCommandFridayException If the task list is empty.
      */
     public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {

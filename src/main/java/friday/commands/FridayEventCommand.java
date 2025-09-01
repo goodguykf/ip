@@ -12,6 +12,12 @@ public class FridayEventCommand extends FridayCommand {
         this.argument = argument;
     }
 
+    /**
+     * Processes the argument String to check if it is valid.
+     * @param arg is the command after the keyword.
+     * @return a processed command.
+     * @throws UnknownCommandFridayException if the argument does not fit the command description.
+     */
     public String process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty()) {
             throw new UnknownCommandFridayException("Description of an Event friday.tasks.Task cannot be empty!");
