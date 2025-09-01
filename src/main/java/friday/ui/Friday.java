@@ -43,7 +43,7 @@ public class Friday {
 
         Scanner sc = new Scanner(System.in);
 
-        while(isRunning) {
+        while (isRunning) {
             try {
                 String input = sc.nextLine();
                 FridayCommand cmd = FridayParser.parse(input);

@@ -6,8 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Represents a class use to test the Todo class.
+ */
 public class ToDoTest {
 
+    /**
+     * Test if the method testMarkTaskAsDone is working as intended.
+     */
     @Test
     public void testMarkTaskAsDone() {
         ToDos task = new ToDos("read book");
@@ -17,6 +23,9 @@ public class ToDoTest {
         assertTrue(task.isDone(), "Task should be marked as done");
     }
 
+    /**
+     * Test if the method testMarkTaskAsUnDone is working as intended.
+     */
     @Test
     public void testMarkTaskAsUndone() {
         ToDos task = new ToDos("write code");

@@ -8,8 +8,8 @@ import friday.tasks.Events;
 import java.util.ArrayList;
 
 public class FridayTaskList {
-    public ArrayList<Task> list = new ArrayList<>();
-    int numberOfTasks = 0;
+    private ArrayList<Task> list = new ArrayList<>();
+    private int numberOfTasks = 0;
 
     public FridayTaskList(ArrayList<Task> taskList) {
         this.list = taskList;
@@ -72,7 +72,7 @@ public class FridayTaskList {
     public void printList() {
         for (int i = 0; i < list.size(); i++) {
             Task currTask = list.get(i);
-            System.out.println((i + 1) + "." + currTask.printTask());
+            System.out.println((i + 1) + "." + currTask.taskAsString());
         }
     }
 

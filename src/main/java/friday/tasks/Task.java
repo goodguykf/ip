@@ -39,7 +39,7 @@ public class Task {
      *
      * @return a String representation of the task.
      */
-    public String printTask() {
+    public String taskAsString() {
         return getStatusIcon() + getDescription();
     }
 

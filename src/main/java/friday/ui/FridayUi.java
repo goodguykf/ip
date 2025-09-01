@@ -30,12 +30,12 @@ public class FridayUi {
 
     public void showTaskHasBeenDeleted(Task task, FridayTaskList tasklist) {
         System.out.println("Noted. I've removed this task:");
-        System.out.println(task.printTask());
+        System.out.println(task.taskAsString());
         System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
     }
     public void showTaskHasBeenAdded(Task task, FridayTaskList tasklist) {
         System.out.println("Got it. I've added this task:"); // to notify the user that task is added
-        System.out.println(task.printTask());
+        System.out.println(task.taskAsString());
         System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
     }
 

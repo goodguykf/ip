@@ -50,7 +50,7 @@ public class Events extends Task {
      * @return a String of task in the correct format.
      */
     @Override
-    public String printTask() {
+    public String taskAsString() {
         return "[E]" + getStatusIcon() + " " + getDescription()
                 + " (from: " + getFrom() + " to: " + getTo() + ")";
     }

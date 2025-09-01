@@ -36,7 +36,7 @@ public class Deadlines extends Task {
      * @return a String of task in the correct format.
      */
     @Override
-    public String printTask() {
+    public String taskAsString() {
         return "[D]" + getStatusIcon() + " " + getDescription() + " (by :" + getDeadline() +")";
     }
 
