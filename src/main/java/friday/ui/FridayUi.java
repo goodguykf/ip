@@ -42,12 +42,12 @@ public class FridayUi {
     }
 
     public void showListHasBeenMarked(Task task) {
-        System.out.println("Nice! I've marked this task as done:");
+        System.out.println("Nice! I've marked this task as isDone:");
         System.out.println(task.getStatusIcon() + " " + task.getDescription());
     }
 
     public void showListHasBeenUnmarked(Task task) {
-        System.out.println("Nice! I've unmarked this task as done:");
+        System.out.println("Nice! I've unmarked this task as isDone:");
         System.out.println(task.getStatusIcon() + " " + task.getDescription());
     }
 

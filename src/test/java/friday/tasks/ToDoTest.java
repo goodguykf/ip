@@ -17,10 +17,10 @@ public class ToDoTest {
     @Test
     public void testMarkTaskAsDone() {
         ToDos task = new ToDos("read book");
-        assertFalse(task.isDone(), "Task should start as not done");
+        assertFalse(task.getIsDone(), "Task should start as not isDone");
 
         task.markTaskAsDone();
-        assertTrue(task.isDone(), "Task should be marked as done");
+        assertTrue(task.getIsDone(), "Task should be marked as isDone");
     }
 
     /**
@@ -29,11 +29,11 @@ public class ToDoTest {
     @Test
     public void testMarkTaskAsUndone() {
         ToDos task = new ToDos("write code");
-        task.markTaskAsDone(); // mark it done first
-        assertTrue(task.isDone(), "Task should be done after marking it");
+        task.markTaskAsDone(); // mark it isDone first
+        assertTrue(task.getIsDone(), "Task should be isDone after marking it");
 
         task.markTaskAsUndone();
-        assertFalse(task.isDone(), "Task should be undone after marking it undone");
+        assertFalse(task.getIsDone(), "Task should be undone after marking it undone");
     }
 
     @Test

@@ -20,18 +20,18 @@ public class FridayEncoder {
         for (Task t : tasks) {
             if (t instanceof ToDos) {
                 encoded.add(String.format("[T][%s] %s",
-                        t.isDone() ? "X" : " ",
+                        t.getIsDone() ? "X" : " ",
                         t.getDescription()));
             } else if (t instanceof Deadlines) {
                 Deadlines d = (Deadlines) t;
                 encoded.add(String.format("[D][%s] %s (by: %s)",
-                        d.isDone() ? "X" : " ",
+                        d.getIsDone() ? "X" : " ",
                         d.getDescription(),
                         d.getDeadline()));
             } else if (t instanceof Events) {
                 Events e = (Events) t;
                 encoded.add(String.format("[E][%s] %s (from: %s to: %s)",
-                        e.isDone() ? "X" : " ",
+                        e.getIsDone() ? "X" : " ",
                         e.getDescription(),
                         e.getFrom(),
                         e.getTo()));

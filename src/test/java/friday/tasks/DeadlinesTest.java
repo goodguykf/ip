@@ -17,12 +17,12 @@ public class DeadlinesTest {
     public void testMarkAsDone() {
         Deadlines deadline = new Deadlines("submit report", "12/12/2025 1200");
 
-        // Initially, the task should not be done
-        assertFalse(deadline.isDone(), "Task should start as not done");
+        // Initially, the task should not be isDone
+        assertFalse(deadline.getIsDone(), "Task should start as not isDone");
 
-        // Mark the task as done
+        // Mark the task as isDone
         deadline.markTaskAsDone();
-        assertTrue(deadline.isDone(), "Task should be done after markTaskAsDone()");
+        assertTrue(deadline.getIsDone(), "Task should be isDone after markTaskAsDone()");
     }
 
     /**
@@ -32,13 +32,13 @@ public class DeadlinesTest {
     public void testMarkAsUndone() {
         Deadlines deadline = new Deadlines("submit report", "12/12/2025 1200");
 
-        // First mark the task as done
+        // First mark the task as isDone
         deadline.markTaskAsDone();
-        assertTrue(deadline.isDone(), "Task should be done before marking as undone");
+        assertTrue(deadline.getIsDone(), "Task should be isDone before marking as undone");
 
         // Now mark it as undone
         deadline.markTaskAsUndone();
-        assertFalse(deadline.isDone(), "Task should be undone after markTaskAsUndone()");
+        assertFalse(deadline.getIsDone(), "Task should be undone after markTaskAsUndone()");
     }
 
     /**

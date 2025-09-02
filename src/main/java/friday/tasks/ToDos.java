@@ -4,7 +4,7 @@ import friday.tasks.Task;
 
 
 /**
- * Represents a task that needs to be done. A <code>Todos</code> object corresponds
+ * Represents a task that needs to be isDone. A <code>Todos</code> object corresponds
  * to a task represented by its description.
  */
 public class ToDos extends Task {

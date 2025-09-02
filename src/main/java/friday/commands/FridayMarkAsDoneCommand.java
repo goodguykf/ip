@@ -6,7 +6,7 @@ import friday.storage.FridayStorage;
 import friday.ui.FridayUi;
 
 /**
- * Represent the command that mark the task as done.
+ * Represent the command that mark the task as isDone.
  */
 public class FridayMarkAsDoneCommand extends FridayCommand {
     public String argument;
@@ -29,7 +29,7 @@ public class FridayMarkAsDoneCommand extends FridayCommand {
         return Integer.parseInt(arg);
     }
     /**
-     * This marks the requested task as done.
+     * This marks the requested task as isDone.
      * @param taskList the task list.
      * @param storage the Storage friday.ui.Friday is using.
      */

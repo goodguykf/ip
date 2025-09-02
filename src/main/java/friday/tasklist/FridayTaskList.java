@@ -21,7 +21,7 @@ public class FridayTaskList {
 
     /**
      * Marks the task corresponding to the int position, given as argument,
-     * on the list as done.
+     * on the list as isDone.
      * @param taskNo is the task number on the list to be marked.
      */
     public void markTaskAsDone(int taskNo) {
@@ -31,7 +31,7 @@ public class FridayTaskList {
 
     /**
      * Unmarks the task corresponding to the int position, given as argument,
-     * on the list as done.
+     * on the list as isDone.
      * @param taskNo is the task number on the list to be unmarked.
      */
     public void markTaskAsUndone(int taskNo) {
