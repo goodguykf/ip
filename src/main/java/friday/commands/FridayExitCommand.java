@@ -3,7 +3,7 @@ package friday.commands;
 import friday.tasklist.FridayTaskList;
 import friday.exceptions.UnknownCommandFridayException;
 import friday.storage.FridayStorage;
-import friday.ui.Friday;
+import app.Friday;
 import friday.ui.FridayUi;
 
 public class FridayExitCommand extends FridayCommand {
@@ -14,9 +14,8 @@ public class FridayExitCommand extends FridayCommand {
      * @param storage is the current storage the bot is using.
      * @throws UnknownCommandFridayException If the command is not one of the known command.
      */
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
-        ui.showGoodbye();
-        Friday.stopRunning();
+        return ui.showGoodbye();
     }
 }

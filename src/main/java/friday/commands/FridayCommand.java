@@ -12,8 +12,8 @@ public abstract class FridayCommand {
     public void process() {
         return;
     }
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
-        return;
+        return "";
     }
 }

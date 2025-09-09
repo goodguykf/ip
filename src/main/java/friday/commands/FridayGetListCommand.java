@@ -16,11 +16,11 @@ public class FridayGetListCommand extends FridayCommand {
      * @param storage is the current storage that the bot is using.
      * @throws UnknownCommandFridayException If the task list is empty.
      */
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         if(taskList.getList().isEmpty()){
-            System.out.println("There is no Tasks in the List");
+            return "There is no Tasks in the List";
         }
-        ui.showList(taskList);
+        return ui.showList(taskList);
     }
 }

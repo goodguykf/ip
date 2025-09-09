@@ -36,7 +36,7 @@ public class FridayDeadlineCommand extends FridayCommand {
      * @throws UnknownCommandFridayException If the description does not fit the standard.
      */
     @Override
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         String input = process(this.argument);
 
@@ -52,6 +52,6 @@ public class FridayDeadlineCommand extends FridayCommand {
 
         taskList.addDeadlineTask(description, deadline);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()), taskList);
+        return ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()), taskList);
     }
 }

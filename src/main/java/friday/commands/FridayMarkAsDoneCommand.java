@@ -31,13 +31,13 @@ public class FridayMarkAsDoneCommand extends FridayCommand {
     /**
      * This marks the requested task as isDone.
      * @param taskList the task list.
-     * @param storage the Storage friday.ui.Friday is using.
+     * @param storage the Storage app.Friday is using.
      */
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
             int taskNo = process(this.argument);
             taskList.markTaskAsDone(taskNo);
             storage.writeListToFile(taskList.getList());
-            ui.showListHasBeenMarked(taskList.getTask(taskNo));
+            return ui.showListHasBeenMarked(taskList.getTask(taskNo));
     }
 }

@@ -29,12 +29,12 @@ public class FridayFindCommand extends FridayCommand {
      * @throws UnknownCommandFridayException If no task in the list matches with the user input keyword.
      */
     @Override
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         ArrayList<String> matchingResults = taskList.findTasks(process(keyword));
         if(matchingResults.isEmpty()) {
             throw new UnknownCommandFridayException("No task in your List matches with your keyword.");
         }
-        ui.showMatchingResults(matchingResults);
+        return ui.showMatchingResults(matchingResults);
     }
 }

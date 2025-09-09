@@ -16,46 +16,49 @@ public class FridayUi {
     /**
      * Shows the user the welcome message
      */
-    public void showWelcome() {
-        System.out.println("Hello! I'm friday.ui.Friday"); //Message sent when the bot is activated
-        System.out.println("What can I do for you?");
+    public String showWelcome() {
+        return "Hello boss, Friday here!\nWhat can I do for you?";
     }
 
-    public void showGoodbye() {
-        System.out.println("Bye. Hope to see you again soon!");
+    public String showGoodbye() {
+        return "Bye. Hope to see you again soon!";
     }
 
-    public void showList(FridayTaskList taskList) {
-        System.out.println("Here are the tasks in your list:");
-        taskList.printList();
+    public String showList(FridayTaskList taskList) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Here are the tasks in your list:\n");
+        sb.append(taskList.listAsString());
+        return sb.toString();
     }
 
-    public void showTaskHasBeenDeleted(Task task, FridayTaskList tasklist) {
-        System.out.println("Noted. I've removed this task:");
-        System.out.println(task.taskAsString());
-        System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
-    }
-    public void showTaskHasBeenAdded(Task task, FridayTaskList tasklist) {
-        System.out.println("Got it. I've added this task:"); // to notify the user that task is added
-        System.out.println(task.taskAsString());
-        System.out.println("Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.");
+    public String showTaskHasBeenDeleted(Task task, FridayTaskList tasklist) {
+        return "Noted. I've removed this task:\n"
+                + task.taskAsString() + "\n"
+                + "Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.";
     }
 
-    public void showListHasBeenMarked(Task task) {
-        System.out.println("Nice! I've marked this task as isDone:");
-        System.out.println(task.getStatusIcon() + " " + task.getDescription());
+    public String showTaskHasBeenAdded(Task task, FridayTaskList tasklist) {
+        return "Got it. I've added this task:\n"
+                + task.taskAsString() + "\n"
+                + "Now you have " + tasklist.getNumberOfTasks() + " tasks in the list.";
     }
 
-    public void showListHasBeenUnmarked(Task task) {
-        System.out.println("Nice! I've unmarked this task as isDone:");
-        System.out.println(task.getStatusIcon() + " " + task.getDescription());
+    public String showListHasBeenMarked(Task task) {
+        return "Nice! I've marked this task as isDone:\n"
+                + task.getStatusIcon() + " " + task.getDescription();
     }
 
-    public void showMatchingResults(ArrayList<String> matchingResults) {
-        System.out.println("Here are the matching tasks in your list:");
+    public String showListHasBeenUnmarked(Task task) {
+        return "Nice! I've unmarked this task as isDone:\n"
+                + task.getStatusIcon() + " " + task.getDescription();
+    }
+
+    public String showMatchingResults(ArrayList<String> matchingResults) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Here are the matching tasks in your list:\n");
         for (String task : matchingResults) {
-            System.out.println(task);
+            sb.append(task).append("\n");
         }
+        return sb.toString().trim();
     }
-
 }
