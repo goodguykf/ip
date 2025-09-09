@@ -37,7 +37,10 @@ public class Friday {
         }
     }
 
-
+    /**
+     * Returns a String of welcome message.
+     * @return a String of welcome message.
+     */
     public String getWelcome() {
         return ui.showWelcome();
     }
