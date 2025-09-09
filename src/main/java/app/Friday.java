@@ -1,4 +1,4 @@
-package friday.ui;
+package app;
 
 import friday.commands.FridayCommand;
 import friday.exceptions.FridayTaskDecodeException;
@@ -6,6 +6,7 @@ import friday.exceptions.UnknownCommandFridayException;
 import friday.parser.FridayParser;
 import friday.storage.FridayStorage;
 import friday.tasklist.FridayTaskList;
+import friday.ui.FridayUi;
 
 import java.util.Scanner;
 
@@ -18,6 +19,7 @@ public class Friday {
     private FridayStorage storage;
     private FridayUi ui;
     private FridayTaskList list;
+    private String response;
     public static boolean isRunning = true;
 
     public static void stopRunning() {
@@ -36,25 +38,28 @@ public class Friday {
     }
 
     /**
-     * Runs the Friday bot
+     * Returns a String of welcome message.
+     * @return a String of welcome message.
      */
-    public void run() {
-        ui.showWelcome();
+    public String getWelcome() {
+        return ui.showWelcome();
+    }
 
-        Scanner sc = new Scanner(System.in);
-
-        while (isRunning) {
-            try {
-                String input = sc.nextLine();
-                FridayCommand cmd = FridayParser.parse(input);
-                cmd.execute(list, ui, storage);
-            } catch (UnknownCommandFridayException e) {
-                System.out.println(e.getMessage());
-            }
+    /**
+     * Return a String of message for the given input from user.
+     * @param input is the input from the user.
+     * @return a String of message to be shown to the user.
+     */
+    public String getResponse(String input) {
+        FridayCommand cmd = FridayParser.parse(input);
+        String response = "";
+        try {
+            response = cmd.execute(list, ui, storage);
+        } catch (UnknownCommandFridayException e) {
+            e.getMessage();
         }
+
+        return response;
     }
 
-    public static void main(String[] args) {
-        new Friday("data/tasks.txt").run();
-    }
 }

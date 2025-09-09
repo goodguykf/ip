@@ -98,6 +98,14 @@ public class FridayTaskList {
         return results;
     }
 
+    public String listAsString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            sb.append((i + 1) + ". " + list.get(i).taskAsString() + "\n");
+        }
+        return sb.toString().trim();
+    }
+
 
 
 }

@@ -14,7 +14,7 @@ public class FridayUnknownCommand extends FridayCommand {
      * @throws UnknownCommandFridayException It will always throw this exception as an
      * unknown command is passed
      */
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         throw new UnknownCommandFridayException("Oops I don't know what you mean by that. " +
                 "Try using the commands like \"todo\" instead!");

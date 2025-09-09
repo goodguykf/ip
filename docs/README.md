@@ -1,4 +1,4 @@
-# friday.ui.Friday User Guide
+# app.Friday User Guide
 
 // Update the title above to match the actual product name
 

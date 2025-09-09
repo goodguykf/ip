@@ -1,7 +1,7 @@
 package friday.exceptions;
 
 /**
- * Represents a potential exceptions cause by friday.ui.Friday chatbot due to the user
+ * Represents a potential exceptions cause by app.Friday chatbot due to the user
  * trying to add or retrieve a something that does not exist.
  */
 public class NullFridayException extends Exception {

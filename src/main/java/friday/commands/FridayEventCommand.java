@@ -25,7 +25,7 @@ public class FridayEventCommand extends FridayCommand {
         return arg;
     }
 
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         String processedArgument = process(this.argument);
 
@@ -49,6 +49,6 @@ public class FridayEventCommand extends FridayCommand {
 
         taskList.addEventTask(description, from, to);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
+        return ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
     }
 }

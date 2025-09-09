@@ -28,9 +28,9 @@ public class FridayUnmarkAsDoneCommand extends FridayCommand {
     /**
      * This marks the requested task as isDone.
      * @param taskList the task list.
-     * @param storage the Storage friday.ui.Friday is using.
+     * @param storage the Storage app.Friday is using.
      */
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         int taskNo = process(this.argument);
         if(taskNo > taskList.getNumberOfTasks() + 1) {
@@ -39,6 +39,6 @@ public class FridayUnmarkAsDoneCommand extends FridayCommand {
         }
         taskList.markTaskAsUndone(taskNo);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showListHasBeenUnmarked(taskList.getTask(taskNo));
+        return ui.showTaskHasBeenUnmarked(taskList.getTask(taskNo));
     }
 }

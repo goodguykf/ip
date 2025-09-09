@@ -27,7 +27,7 @@ public class FridayDeleteTaskCommand extends FridayCommand {
         return Integer.parseInt(arg);
     }
     @Override
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         int taskNo = process(this.argument);
         if(taskNo > taskList.getNumberOfTasks() + 1) {
@@ -36,7 +36,8 @@ public class FridayDeleteTaskCommand extends FridayCommand {
         }
         Task tempTask = taskList.getTask(taskNo);
         taskList.deleteTask(taskNo);
-        ui.showTaskHasBeenDeleted(tempTask,taskList);
+        String tempString = ui.showTaskHasBeenDeleted(tempTask,taskList);
         FridayStorage.writeListToFile(taskList.getList());
+        return tempString;
     }
 }

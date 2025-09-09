@@ -25,12 +25,12 @@ public class FridayTodoCommand extends FridayCommand {
         return arg;
     }
 
-    public void execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
+    public String execute(FridayTaskList taskList, FridayUi ui, FridayStorage storage)
             throws UnknownCommandFridayException {
         String processArgument = process(this.argument);
 
         taskList.addTodoTask(processArgument);
         FridayStorage.writeListToFile(taskList.getList());
-        ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
+        return ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
     }
 }
