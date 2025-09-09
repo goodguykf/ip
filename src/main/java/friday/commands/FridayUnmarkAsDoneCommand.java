@@ -39,6 +39,6 @@ public class FridayUnmarkAsDoneCommand extends FridayCommand {
         }
         taskList.markTaskAsUndone(taskNo);
         FridayStorage.writeListToFile(taskList.getList());
-        return ui.showListHasBeenUnmarked(taskList.getTask(taskNo));
+        return ui.showTaskHasBeenUnmarked(taskList.getTask(taskNo));
     }
 }

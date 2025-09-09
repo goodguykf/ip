@@ -38,6 +38,6 @@ public class FridayMarkAsDoneCommand extends FridayCommand {
             int taskNo = process(this.argument);
             taskList.markTaskAsDone(taskNo);
             storage.writeListToFile(taskList.getList());
-            return ui.showListHasBeenMarked(taskList.getTask(taskNo));
+            return ui.showTaskHasBeenMarked(taskList.getTask(taskNo));
     }
 }

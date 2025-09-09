@@ -48,10 +48,22 @@ public class DialogBox extends HBox {
         setAlignment(Pos.TOP_LEFT);
     }
 
+    /**
+     * Represents the dialog box for the user.
+     * @param text is the text the user send.
+     * @param img is the profile photo of the user.
+     * @return a DialogBox for the user.
+     */
     public static DialogBox getUserDialog(String text, Image img) {
         return new DialogBox(text, img);
     }
 
+    /**
+     * Represents the dialog box for Friday.
+     * @param text is the text Friday send.
+     * @param img is the profile photo of Friday.
+     * @return a DialogBox for Friday.
+     */
     public static DialogBox getFridayDialog(String text, Image img) {
         var db = new DialogBox(text, img);
         db.flip();
