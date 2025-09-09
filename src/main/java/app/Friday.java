@@ -45,6 +45,11 @@ public class Friday {
         return ui.showWelcome();
     }
 
+    /**
+     * Return a String of message for the given input from user.
+     * @param input is the input from the user.
+     * @return a String of message to be shown to the user.
+     */
     public String getResponse(String input) {
         FridayCommand cmd = FridayParser.parse(input);
         String response = "";
