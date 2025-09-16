@@ -16,7 +16,7 @@ public class ToDoTest {
      */
     @Test
     public void testMarkTaskAsDone() {
-        ToDos task = new ToDos("read book");
+        ToDos task = new ToDos("read book", "");
         assertFalse(task.getIsDone(), "Task should start as not isDone");
 
         task.markTaskAsDone();
@@ -28,7 +28,7 @@ public class ToDoTest {
      */
     @Test
     public void testMarkTaskAsUndone() {
-        ToDos task = new ToDos("write code");
+        ToDos task = new ToDos("write code", "");
         task.markTaskAsDone(); // mark it isDone first
         assertTrue(task.getIsDone(), "Task should be isDone after marking it");
 
@@ -38,7 +38,7 @@ public class ToDoTest {
 
     @Test
     public void testDescription() {
-        ToDos task = new ToDos("finish homework");
+        ToDos task = new ToDos("finish homework", "");
         assertEquals("finish homework", task.getDescription(), "Description should match");
     }
 }

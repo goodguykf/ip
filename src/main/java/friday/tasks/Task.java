@@ -8,10 +8,12 @@ package friday.tasks;
  */
 public class Task {
     protected String description;
+    protected String tag;
     protected boolean isDone;
 
-    public Task (String description) {
+    public Task (String description, String tag) {
         this.description = description;
+        this.tag = tag;
         this.isDone = false;
     }
 
@@ -63,5 +65,9 @@ public class Task {
      */
     public void markTaskAsUndone() {
         isDone = false;
+    }
+
+    public String getTag() {
+        return tag;
     }
 }
