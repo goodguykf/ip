@@ -20,8 +20,8 @@ public class Events extends Task {
     private static final DateTimeFormatter outputFormatter =
                 DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm");
 
-    public Events(String description, String from, String to) {
-        super(description);
+    public Events(String description, String from, String to, String tag) {
+        super(description, tag);
         this.from = LocalDateTime.parse(from, inputFormats);
         this.to = LocalDateTime.parse(to, inputFormats);
     }
@@ -52,7 +52,7 @@ public class Events extends Task {
     @Override
     public String taskAsString() {
         return "[E]" + getStatusIcon() + " " + getDescription()
-                + " (from: " + getFrom() + " to: " + getTo() + ")";
+                + " (from: " + getFrom() + " to: " + getTo() + ") " + getTag();
     }
 
 }

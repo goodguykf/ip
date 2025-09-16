@@ -48,9 +48,14 @@ public class FridayDeadlineCommand extends FridayCommand {
         }
 
         String description = parts[0];  //the description of the task
-        String deadline = parts[1]; //the deadline of the task
 
-        taskList.addDeadlineTask(description, deadline);
+        String[] tagParts = parts[1].split(" /tag ", 2);
+
+        String deadline = tagParts[0]; //the deadline of the task
+
+        String tag = tagParts[1];
+
+        taskList.addDeadlineTask(description, deadline, tag);
         FridayStorage.writeListToFile(taskList.getList());
         return ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()), taskList);
     }

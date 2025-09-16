@@ -45,20 +45,20 @@ public class FridayTaskList {
         numberOfTasks--;
     }
 
-    public void addTodoTask(String description) {
-        ToDos td = new ToDos(description);
+    public void addTodoTask(String description, String tag) {
+        ToDos td = new ToDos(description, tag);
         list.add(td);
         numberOfTasks++;
     }
 
-    public void addDeadlineTask(String description, String deadline) {
-        Deadlines dl = new Deadlines(description, deadline);
+    public void addDeadlineTask(String description, String deadline, String tag) {
+        Deadlines dl = new Deadlines(description, deadline, tag);
         list.add(dl);
         numberOfTasks++;
     }
 
-    public void addEventTask(String description, String from, String to) {
-        Events event = new Events(description, from, to);
+    public void addEventTask(String description, String from, String to, String tag) {
+        Events event = new Events(description, from, to, tag);
         list.add(event);
         numberOfTasks++;
     }

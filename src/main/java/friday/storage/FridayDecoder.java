@@ -29,28 +29,60 @@ public class FridayDecoder {
             try {
                 switch (type) {
                     case 'T':
-                        String descT = line.substring(7).trim();
-                        ToDos todo = new ToDos(descT);
+                        String raw = line.substring(7).trim();
+                        String descT = raw;
+                        String tagT = "";
+
+                        // check if last word starts with #
+                        int hashIndexT = raw.lastIndexOf(" #");
+                        if (hashIndexT != -1) {
+                            descT = raw.substring(0, hashIndexT).trim();
+                            tagT = raw.substring(hashIndexT + 1).trim(); // includes #
+                        }
+
+                        ToDos todo = new ToDos(descT, tagT);
                         if (isDone) todo.markTaskAsDone();
                         tasks.add(todo);
                         break;
                     case 'D':
                         int byIndex = line.indexOf("(by:");
                         if (byIndex == -1) throw new FridayTaskDecodeException("Missing deadline: " + line);
-                        String descD = line.substring(7, byIndex).trim();
+
+                        String rawDesc = line.substring(7, byIndex).trim();
+                        String desc = rawDesc;
+                        String tag = "";
+
+                        int hashIndex = rawDesc.lastIndexOf(" #");
+                        if (hashIndex != -1) {
+                            desc = rawDesc.substring(0, hashIndex).trim();
+                            tag = rawDesc.substring(hashIndex + 1).trim();
+                        }
+
                         String by = line.substring(byIndex + 5, line.length() - 1).trim();
-                        Deadlines deadline = new Deadlines(descD, by);
+                        Deadlines deadline = new Deadlines(desc, by, tag);
                         if (isDone) deadline.markTaskAsDone();
                         tasks.add(deadline);
                         break;
                     case 'E':
                         int fromIndex = line.indexOf("(from:");
                         int toIndex = line.indexOf("to:", fromIndex);
-                        if (fromIndex == -1 || toIndex == -1) throw new FridayTaskDecodeException("Malformed event: " + line);
-                        String descE = line.substring(7, fromIndex).trim();
+                        if (fromIndex == -1 || toIndex == -1)
+                            throw new FridayTaskDecodeException("Malformed event: " + line);
+
+                        String rawDescE = line.substring(7, fromIndex).trim();
+                        String descE = rawDescE;
+                        String tagE = "";
+
+                        int hashIndexE = rawDescE.lastIndexOf(" #");
+
+                        if (hashIndexE != -1) {
+                            desc = rawDescE.substring(0, hashIndexE).trim();
+                            tag = rawDescE.substring(hashIndexE + 1).trim();
+                        }
+
                         String from = line.substring(fromIndex + 6, toIndex).trim();
                         String to = line.substring(toIndex + 3, line.length() - 1).trim();
-                        Events event = new Events(descE, from, to);
+                        Events event = new Events(descE, from, to, tagE);
                         if (isDone) event.markTaskAsDone();
                         tasks.add(event);
                         break;

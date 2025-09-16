@@ -9,8 +9,8 @@ import friday.tasks.Task;
  */
 public class ToDos extends Task {
 
-    public ToDos(String description) {
-        super(description);
+    public ToDos(String description, String tag) {
+        super(description, tag);
     }
 
     /**
@@ -19,7 +19,7 @@ public class ToDos extends Task {
      */
     @Override
     public String taskAsString() {
-        return "[T]" + getStatusIcon() + " " + getDescription();
+        return "[T]" + getStatusIcon() + " " + getDescription() + " " + getTag();
     }
 
 }

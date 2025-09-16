@@ -17,8 +17,8 @@ public class Deadlines extends Task {
     private static final DateTimeFormatter outputFormatter =
             DateTimeFormatter.ofPattern("dd MMM yyyy HH:mm");
 
-    public Deadlines(String description, String by) {
-        super(description);
+    public Deadlines(String description, String by, String tag) {
+        super(description, tag);
         this.deadline = LocalDateTime.parse(by, inputFormats);
     }
 
@@ -37,7 +37,7 @@ public class Deadlines extends Task {
      */
     @Override
     public String taskAsString() {
-        return "[D]" + getStatusIcon() + " " + getDescription() + " (by :" + getDeadline() +")";
+        return "[D]" + getStatusIcon() + " " + getDescription() + " (by :" + getDeadline() +") " + getTag();
     }
 
 }

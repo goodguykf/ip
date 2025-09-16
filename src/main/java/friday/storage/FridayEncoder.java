@@ -18,23 +18,27 @@ public class FridayEncoder {
     public static List<String> encodeTasks(List<Task> tasks) {
         List<String> encoded = new ArrayList<>();
         for (Task t : tasks) {
+            String tagPart = (t.getTag() == null || t.getTag().isEmpty()) ? "" : " " + t.getTag();
             if (t instanceof ToDos) {
                 encoded.add(String.format("[T][%s] %s",
                         t.getIsDone() ? "X" : " ",
-                        t.getDescription()));
+                        t.getDescription(),
+                        tagPart));
             } else if (t instanceof Deadlines) {
                 Deadlines d = (Deadlines) t;
                 encoded.add(String.format("[D][%s] %s (by: %s)",
                         d.getIsDone() ? "X" : " ",
                         d.getDescription(),
-                        d.getDeadline()));
+                        d.getDeadline(),
+                        tagPart));
             } else if (t instanceof Events) {
                 Events e = (Events) t;
                 encoded.add(String.format("[E][%s] %s (from: %s to: %s)",
                         e.getIsDone() ? "X" : " ",
                         e.getDescription(),
                         e.getFrom(),
-                        e.getTo()));
+                        e.getTo(),
+                        tagPart));
             }
         }
         return encoded;

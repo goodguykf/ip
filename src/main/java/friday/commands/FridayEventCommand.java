@@ -45,9 +45,17 @@ public class FridayEventCommand extends FridayCommand {
 
         String from = timeParts[0];     // from
 
-        String to = timeParts[1];       // to
+        String toAndTag = timeParts[1];       // to and tag
 
-        taskList.addEventTask(description, from, to);
+        String[] tagParts = toAndTag.split(" ", 2);
+
+        String to = tagParts[0];
+
+        String tag = tagParts[1];
+
+
+
+        taskList.addEventTask(description, from, to, tag);
         FridayStorage.writeListToFile(taskList.getList());
         return ui.showTaskHasBeenAdded(taskList.getTask(taskList.getNumberOfTasks()),taskList);
     }
