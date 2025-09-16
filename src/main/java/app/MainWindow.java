@@ -11,6 +11,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.util.Objects;
+
 /**
  * Controller for the main GUI.
  */
@@ -46,7 +48,9 @@ public class MainWindow extends AnchorPane {
     @FXML
     private void handleUserInput() {
         String input = userInput.getText();
+        assert !Objects.equals(input, "") : "The input should not be empty";
         String response = friday.getResponse(input);
+        assert !Objects.equals(input, "") : "The response should not be empty";
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),
                 DialogBox.getFridayDialog(response, fridayImage)
