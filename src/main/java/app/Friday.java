@@ -46,7 +46,7 @@ public class Friday {
     }
 
     /**
-     * Return a String of message for the given input from user.
+     * Return a String of message for the given response from user.
      * @param input is the input from the user.
      * @return a String of message to be shown to the user.
      */
