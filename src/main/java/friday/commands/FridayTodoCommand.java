@@ -29,10 +29,17 @@ public class FridayTodoCommand extends FridayCommand {
             throws UnknownCommandFridayException {
         String processArgument = process(this.argument);
 
-        String[] parts = processArgument.split(" ", 2);
+        String[] parts = processArgument.split(" #", 2);
 
         String argument = parts[0];
-        String tag = parts[1];
+        String tag ="";
+
+        if(parts.length < 2 || parts[1].trim().isEmpty()) {
+            tag = "";
+        } else {
+            tag = " #" + parts[1];
+        }
+
 
 
         taskList.addTodoTask(argument, tag);

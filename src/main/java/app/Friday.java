@@ -56,7 +56,7 @@ public class Friday {
         try {
             response = cmd.execute(list, ui, storage);
         } catch (UnknownCommandFridayException e) {
-            e.getMessage();
+            return e.getMessage();
         }
 
         return response;

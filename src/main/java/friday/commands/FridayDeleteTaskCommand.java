@@ -31,8 +31,11 @@ public class FridayDeleteTaskCommand extends FridayCommand {
             throws UnknownCommandFridayException {
         int taskNo = process(this.argument);
         if(taskNo > taskList.getNumberOfTasks() + 1) {
-            throw new UnknownCommandFridayException(
-                    "Sorry, this task does not exist. Try the command \"list\" and delete an existing task on your list.");
+            throw new UnknownCommandFridayException("Sorry, this task does not exist. Try the command \"list\" and delete an existing task on your list.");
+        }
+
+        if(taskList.getList().isEmpty()) {
+            throw new UnknownCommandFridayException("Sorry, this task does not exist. Try the command \"list\" and delete an existing task on your list.");
         }
         Task tempTask = taskList.getTask(taskNo);
         taskList.deleteTask(taskNo);
