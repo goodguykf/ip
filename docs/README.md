@@ -1,5 +1,5 @@
 # FRIDAY
-![Screenshot of Friday Chatbot GUI](docs/Ui.png)
+![Screenshot of Friday Chatbot GUI](/docs/Ui.png)
 
 Friday is your personal chatbot assistant designed to make task 
 management simple and intuitive. Instead of clicking through menus or
