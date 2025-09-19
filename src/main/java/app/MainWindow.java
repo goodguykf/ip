@@ -63,6 +63,9 @@ public class MainWindow extends AnchorPane {
         }
     }
 
+    /**
+     * Sets the greeting message for Friday when the program starts.
+     */
     public void setGreeting() {
         dialogContainer.getChildren().addAll(DialogBox.getFridayDialog(friday.getWelcome(), fridayImage));
     }
