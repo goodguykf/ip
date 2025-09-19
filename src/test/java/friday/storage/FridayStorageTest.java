@@ -56,7 +56,7 @@ class FridayStorageTest {
 
     /**
      * Tests writing and reading an empty task list.
-     * @throws FridayTaskDecodeException if reading the file fails
+     * @throws FridayTaskDecodeException if reading the file fails.
      */
     @Test
     void testWriteEmptyList() throws FridayTaskDecodeException {
@@ -67,6 +67,10 @@ class FridayStorageTest {
         assertTrue(readTasks.isEmpty());
     }
 
+    /**
+     * Tests reading from a corrupted file.
+     * @throws Exception if file operations fail.
+     */
     @Test
     void testReadCorruptedFile() throws Exception {
         File file = new File(TEST_FILE);
