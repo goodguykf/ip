@@ -83,6 +83,9 @@ class FridayStorageTest {
         assertNotNull(readTasks);
     }
 
+    /**
+     * Tests that the static filePath is shared across instances.
+     */
     @Test
     void testFilePathStatic() {
         FridayStorage storage1 = new FridayStorage("path1.txt");
