@@ -25,6 +25,10 @@ class FridayStorageTest {
         FridayStorage.filePath = TEST_FILE;
     }
 
+    /**
+     * Cleans up the test environment after each test.
+     * @throws FridayTaskDecodeException if reading the file fails
+     */
     @Test
     void testFileCreatedIfMissing() throws FridayTaskDecodeException {
         File file = new File(TEST_FILE);
