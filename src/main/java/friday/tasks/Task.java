@@ -67,6 +67,10 @@ public class Task {
         isDone = false;
     }
 
+    /**
+     * Returns the tag of the task.
+     * @return a string representing the tag of the task.
+     */
     public String getTag() {
         return tag;
     }

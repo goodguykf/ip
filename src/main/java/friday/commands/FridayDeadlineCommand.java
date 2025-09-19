@@ -48,9 +48,7 @@ public class FridayDeadlineCommand extends FridayCommand {
         }
 
         String description = parts[0];  //the description of the task
-
         String[] tagParts = parts[1].split(" #", 2);
-
         String deadline = tagParts[0]; //the deadline of the task
 
         String tag = "";

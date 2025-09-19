@@ -44,11 +44,8 @@ public class FridayEventCommand extends FridayCommand {
         }
 
         String from = timeParts[0];     // from
-
         String toAndTag = timeParts[1];       // to and tag
-
         String[] tagParts = toAndTag.split(" #", 2);
-
         String to = tagParts[0];
 
         String tag = "";
