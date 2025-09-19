@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FridayStorage {
-    public static String filePath;
+    public static String filePath = "data/friday.txt";
 
     public FridayStorage(String fileAddress) {
         filePath = fileAddress;

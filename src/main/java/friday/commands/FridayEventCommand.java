@@ -56,7 +56,7 @@ public class FridayEventCommand extends FridayCommand {
         if(tagParts.length < 2 || parts[1].trim().isEmpty()) {
             tag = "";
         } else {
-            tag = "#" + parts[1];
+            tag = "#" + tagParts[1];
         }
 
 
