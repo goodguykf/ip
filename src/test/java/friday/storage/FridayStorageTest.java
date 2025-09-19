@@ -54,6 +54,10 @@ class FridayStorageTest {
         assertEquals("Test todo 2", readTasks.get(1).getDescription());
     }
 
+    /**
+     * Tests writing and reading an empty task list.
+     * @throws FridayTaskDecodeException if reading the file fails
+     */
     @Test
     void testWriteEmptyList() throws FridayTaskDecodeException {
         ArrayList<Task> tasks = new ArrayList<>();
