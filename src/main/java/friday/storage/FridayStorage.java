@@ -40,7 +40,7 @@ public class FridayStorage {
         ArrayList<Task> tasks = new ArrayList<>();
         File file = new File(filePath);
 
-        // Create file if it doesn't exist
+        // Create file if missing
         try {
             file.getParentFile().mkdirs(); // create folder if missing
             file.createNewFile();
@@ -48,7 +48,7 @@ public class FridayStorage {
             System.out.println("Error creating file: " + e.getMessage());
         }
 
-        // Read lines
+        // Read file
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             List<String> lines = new ArrayList<>();
             String line;
