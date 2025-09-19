@@ -120,7 +120,8 @@ After keying in the command line Friday will display all matching tasks.
 Here are the matching tasks in your list:
 1.[task details]
 2.[task details]
-...X.[task details]
+...
+X.[task details]
 ```
 
 ### Tagging Tasks
