@@ -19,12 +19,6 @@ public class Friday {
     private FridayStorage storage;
     private FridayUi ui;
     private FridayTaskList list;
-    private String response;
-    public static boolean isRunning = true;
-
-    public static void stopRunning() {
-        isRunning = false;
-    }
 
     public Friday (String filePath) {
         this.ui = new FridayUi();
