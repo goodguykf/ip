@@ -13,6 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class FridayStorageTest {
     private static final String TEST_FILE = "test_data/friday_test.txt";
 
+    /**
+     * Sets up the test environment before each test.
+     */
     @BeforeEach
     void setUp() {
         // Clean up before each test
