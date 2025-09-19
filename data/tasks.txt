@@ -1,0 +1,6 @@
+[D][ ] Pay credit card bills (by: 25/09/2025 1400) 
+[E][ ] Team meeting (from: 26 Sep 2025 16:00 to: 26 Sep 2025 18:00) #important
+[T][ ] Finish reading AI ethics article  #fun
+[T][X] Wash the laundry 
+[D][ ] Prepare project report (by: 30/09/2025 2359) 
+[T][X] Clean the room 

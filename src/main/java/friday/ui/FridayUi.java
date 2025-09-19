@@ -71,7 +71,7 @@ public class FridayUi {
      * @return a String of message indicating to user that a task has been marked.
      */
     public String showTaskHasBeenMarked(Task task) {
-        return "Nice! I've marked this task as isDone:\n"
+        return "Nice! I've marked this task as Done:\n"
                 + task.getStatusIcon() + " " + task.getDescription();
     }
 
@@ -81,7 +81,7 @@ public class FridayUi {
      * @return a String of message indicating to user that a task has been unmarked.
      */
     public String showTaskHasBeenUnmarked(Task task) {
-        return "Nice! I've unmarked this task as isDone:\n"
+        return "Nice! I've unmarked this task as Done:\n"
                 + task.getStatusIcon() + " " + task.getDescription();
     }
 
