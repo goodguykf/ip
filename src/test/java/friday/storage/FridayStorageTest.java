@@ -37,6 +37,10 @@ class FridayStorageTest {
         assertTrue(file.exists());
     }
 
+    /**
+     * Tests writing and reading tasks to/from the file.
+     * @throws FridayTaskDecodeException if reading the file fails
+     */
     @Test
     void testWriteAndReadTasks() throws FridayTaskDecodeException {
         ArrayList<Task> tasks = new ArrayList<>();
