@@ -100,7 +100,8 @@ Example: `list`
 
 After keying in the command line Friday will display all your tasks.
 
-```Here are the tasks in your list:
+```
+Here are the tasks in your list:
 1.[task details]
 2.[task details]
 ...
@@ -130,7 +131,8 @@ Example: `todo (description of task) #tag`
 
 After keying in the command line Friday will prompt you with a confirmation message.
 
-```Got it. I've added this task:
+```
+Got it. I've added this task:
   [T][ ] (description of task) #tag
 Now you have X tasks in the list.
 ``` 
