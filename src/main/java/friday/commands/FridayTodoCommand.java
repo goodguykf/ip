@@ -20,7 +20,7 @@ public class FridayTodoCommand extends FridayCommand {
      */
     public String process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Description of a Todo friday.tasks.Task cannot be empty!");
+            throw new UnknownCommandFridayException("Description of a Todo task cannot be empty!");
         }
         return arg;
     }

@@ -5,6 +5,10 @@ import friday.tasklist.FridayTaskList;
 import friday.exceptions.UnknownCommandFridayException;
 import friday.ui.FridayUi;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 public class FridayEventCommand extends FridayCommand {
     public String argument;
 
@@ -32,7 +36,7 @@ public class FridayEventCommand extends FridayCommand {
         String[] parts = processedArgument.split(" /from ", 2);
 
         if (parts.length < 2 || parts[1].trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Start time of a Event friday.tasks.Task cannot be empty!");
+            throw new UnknownCommandFridayException("Start time of a Event Task cannot be empty!");
         }
         String description = parts[0];
 
@@ -40,13 +44,32 @@ public class FridayEventCommand extends FridayCommand {
 
         //catch if there is no end time
         if (timeParts.length < 2 || timeParts[1].trim().isEmpty()) {
-            throw new UnknownCommandFridayException("End time of a Event friday.tasks.Task cannot be empty!");
+            throw new UnknownCommandFridayException("End time of a Event Task cannot be empty! " +
+                    "Please enter in the format: event <description> /from <start time> /to <end time> #<tag>");
         }
 
         String from = timeParts[0];     // from
+
+        DateTimeFormatter fromFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+        try {
+            LocalDate.parse(from, fromFormatter);
+        } catch (DateTimeParseException e) {
+            throw new UnknownCommandFridayException(
+                    "Deadline must be in DD/MM/YYYY HHmm format (e.g., 01/01/2001 1230)."
+            );
+        }
         String toAndTag = timeParts[1];       // to and tag
         String[] tagParts = toAndTag.split(" #", 2);
         String to = tagParts[0];
+
+        DateTimeFormatter toFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+        try {
+            LocalDate.parse(to, toFormatter);
+        } catch (DateTimeParseException e) {
+            throw new UnknownCommandFridayException(
+                    "Deadline must be in DD/MM/YYYY HHmm format (e.g., 01/01/2001 1230)."
+            );
+        }
 
         String tag = "";
 

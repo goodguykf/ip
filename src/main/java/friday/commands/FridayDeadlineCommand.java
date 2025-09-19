@@ -5,6 +5,10 @@ import friday.tasklist.FridayTaskList;
 import friday.exceptions.UnknownCommandFridayException;
 import friday.ui.FridayUi;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+
 /**
  * Represents the deadline command that can create a deadline task
  */
@@ -23,7 +27,7 @@ public class FridayDeadlineCommand extends FridayCommand {
      */
     public String process(String arg) throws UnknownCommandFridayException {
         if(arg.trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Description of a Deadline friday.tasks.Task cannot be empty!");
+            throw new UnknownCommandFridayException("Description of a Deadline Task cannot be empty!");
         }
         return arg;
     }
@@ -44,12 +48,22 @@ public class FridayDeadlineCommand extends FridayCommand {
 
         //catch if there is no deadline entered
         if (parts.length < 2 || parts[1].trim().isEmpty()) {
-            throw new UnknownCommandFridayException("Deadline of a Deadline friday.tasks.Task cannot be empty!");
+            throw new UnknownCommandFridayException("Deadline of a Deadline Task cannot be empty! " +
+                    "Please enter in the format: deadline <description> /by <deadline> #<tag>");
         }
 
         String description = parts[0];  //the description of the task
         String[] tagParts = parts[1].split(" #", 2);
         String deadline = tagParts[0]; //the deadline of the task
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HHmm");
+        try {
+            LocalDate.parse(deadline, formatter);
+        } catch (DateTimeParseException e) {
+            throw new UnknownCommandFridayException(
+                    "Deadline must be in DD/MM/YYYY HHmm format (e.g., 01/01/2001 1230)."
+            );
+        }
 
         String tag = "";
 
